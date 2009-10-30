@@ -1,0 +1,17 @@
+(Problem PRM_NUM)[http://projecteuler.net/index.php?section=problems&id=PRM_NUM]
+
+problem
+-------
+put problem text here
+
+> module Problem029 where
+> import List
+
+solution
+--------
+
+> function a -> a -> a
+> function arg1 arg2 = ANSWER 
+
+> answerProblemPRM_NUM = function arg1 arg2
+> testProblemPRM_NUM = ANSWER == answerProblemPRM_NUM
