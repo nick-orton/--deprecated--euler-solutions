@@ -36,8 +36,8 @@ Rotating the 2 x 2 we get:
 4:  3 3
 5:   6
 
-The solution for a square of size n x n is the largest value in the row 2n - 1 of 
-pascal's triangle.
+The solution for a square of size n x n is the largest value in the row 2n - 1
+of pascal's triangle.
 
 > n = 20
 > row = nth_row_triangle ((2 * n) - 1)
