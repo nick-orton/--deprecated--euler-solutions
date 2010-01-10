@@ -28,16 +28,17 @@ a number is a square if its square root is a whole number
 
 Factorials
 ----------
-the factorial of a non-negative integer n, denoted by n!, is the product of all 
+the factorial of a non-negative integer n, denoted by n!, is the product of all
 positive integers less than or equal to n
 
-> (!) :: Integer -> Integer
+> (!) :: (Num t) => t -> t 
+> (!) 0 = 1
 > (!) 1 = 1
 > (!) n = n* (!)(n-1)
 
 for example:  5! = 5 x 4 x 3 x 2 x 1 = 120
 
-> testfactorial = (5 !) == 120
+> testFactorial = ((5 !) == 120) && ((0 !) == 1)
 
 Fibinacci Series
 --------------
@@ -51,4 +52,4 @@ Fibinacci Series
 module test
 -----------
 
-> testNumz = testisNat && testisSqr && testfib 
+> testNumz = testisNat && testisSqr && testfib && testFactorial
