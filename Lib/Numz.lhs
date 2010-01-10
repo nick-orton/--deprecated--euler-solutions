@@ -48,18 +48,9 @@ Fibinacci Series
 > fibs = fib [0,1]
 > testfib = take 7 fibs == [1,1,2,3,5,8,13]
 
-Largest Number in a List
-------------------------
-
-> lgst :: [Integer] -> Integer -> Integer
-> lgst [] n = n
-> lgst (x:xs) n = lgst xs (max n x)
-
-> test_lgst = lgst (1:4:3:5:1:[]) 0 == 5
-
 module test
 -----------
 
-> testNumz = testisNat && testisSqr && testfib && test_lgst
+> testNumz = testisNat && testisSqr && testfib 
 
 

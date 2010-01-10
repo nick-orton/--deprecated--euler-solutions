@@ -41,13 +41,5 @@ of pascal's triangle.
 
 > n = 20
 > row = nth_row_triangle ((2 * n) - 1)
-> answer = lgst row 1
-> testProblem = answer == 137846528820
-
-
-
-
-
-
-
-
+> answerProblem015 = maximum row 
+> testProblem015 = answerProblem015 == 137846528820
