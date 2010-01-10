@@ -14,6 +14,5 @@ solution
 
 > series = map (\x -> (x ^ x)) [1..1000]
 > sumOfSeries = sum series
-> last10Digits = reverse (take 10 (reverse (toDigits sumOfSeries)))
-> answerProblem48 = last10Digits
-> testProblem48 = [9,1,1,0,8,4,6,7,0,0] == answerProblem48
+> answerProblem48 = sumOfSeries `mod` 10^10 
+> testProblem48 = 9110846700 == answerProblem48
