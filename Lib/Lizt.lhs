@@ -12,13 +12,13 @@ Select All
 
 Select The First Matching
 -------------------------
-Select the first element that matches a given criteria from a list 
+Select the first element that matches a given predicate from a list 
 with type Ord.  If no element is found, throw an exception
 
 > fstMatch :: (Ord a) => (a->Bool) -> [a] -> a
 > fstMatch _ [] = error "no match found"
-> fstMatch c (x:xs) | (c x) = x
->                   | otherwise = fstMatch c xs
+> fstMatch p (x:xs) | (p x) = x
+>                   | otherwise = fstMatch p xs
 
 Test:  The first element greater than 4 in ℕ is 5
 
