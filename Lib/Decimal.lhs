@@ -23,7 +23,20 @@ converts an integer into a list of its digits
 
 > testFromDigits = fromDigits [5,3,6,8] == 5368
 
+Binary
+------
+
+converts a decimal number to a list representing a binary number
+http://snipplr.com/view/11807/convert-decimal-to-binary-in-haskell/
+
+> decToBin x = reverse $ decToBin' x
+>     where
+>     decToBin' 0 = []
+>     decToBin' y = let (a,b) = quotRem y 2 in [b] ++ decToBin' a
+
+> testDecToBin = [1,0,1] == decToBin 5
+
 module test
 -----------
 
-> testDecimal = testToDigits && testFromDigits
+> testModule = testToDigits && testFromDigits && testDecToBin
