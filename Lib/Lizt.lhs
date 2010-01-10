@@ -27,9 +27,9 @@ Test:  The first element greater than 4 in ℕ is 5
 
 Select Until
 ------------
-The Select All function is not as usefull for infinate lists.  If a list has
-an order on some characteristic, and we are selecting on that characteristic,
-we can use the order to stop our selection at some point.
+The Select All function is not as usefull for infinite lists.  If a list has
+an order on some characteristic, and we are selecting with a predicate on that 
+characteristic, we can select all elements prior to some position.
 
 > selectUntil :: (Ord a) => (a->Bool) -> [a] -> [a]
 > selectUntil _ [] = []
@@ -41,4 +41,4 @@ we can use the order to stop our selection at some point.
 module test
 -----------
 
-> testLizt = testfstMatch && testselect
+> testLizt = testfstMatch && testselect && testselectUntil
