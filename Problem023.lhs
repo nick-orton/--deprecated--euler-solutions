@@ -28,4 +28,4 @@ solution
 > notSum2Abundants = domain \\ sumOf2Abundants 
 
 > answerProblem23 = sum notSum2Abundants
-> testProblem23 = 0 == answerProblem23
+> testProblem23 = 4179871 == answerProblem23
