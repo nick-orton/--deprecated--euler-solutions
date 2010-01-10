@@ -13,16 +13,12 @@ toDigits
 converts an integer into a list of its digits
 
 > toDigits :: Integer -> [Int]
-> toDigits x = toDigits' (show x)
->     where
->     toDigits' :: [Char] -> [Int] 
->     toDigits' [] = [] 
->     toDigits' (y:ys) = (digitToInt y) : (toDigits' ys)    
+> toDigits x = map digitToInt (show x)
 
-> testtoDigits = toDigits 12345 == [1,2,3,4,5]
+> testToDigits = toDigits 12345 == [1,2,3,4,5]
 
 
 module test
 -----------
 
-> testDecimal = testtoDigits
+> testDecimal = testToDigits
