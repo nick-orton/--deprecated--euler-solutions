@@ -28,13 +28,14 @@ all natural numbers between 1 and the square root of n.  We get the second half
 by finding the quotients of n and the first half of the list. 
 
 > divisors :: Integer -> [Integer]
-> divisors x = (smDivisors) ++ reverse (lgDivisors (smDivisors))
+> divisors x = nub((smDivisors) ++ reverse (lgDivisors (smDivisors)))
 >   where 
 >   smDivisors = [y| y <- [1..(floor (sqrt (fromInteger x)))], (y <. x)]
 >   lgDivisors [] = []
 >   lgDivisors (d:ds) = (quot x d) : lgDivisors ds 
 
-> testdivisors = (divisors 60) == [1,2,3,4,5,6,10,12,15,20,30,60]
+> testdivisors = ((divisors 60) == [1,2,3,4,5,6,10,12,15,20,30,60])
+>                && ((divisors 4) == [1,2,4])
 
 The proper divisors of a number are all the divisors of that number excluding
 itself
