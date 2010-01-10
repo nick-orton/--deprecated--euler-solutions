@@ -17,7 +17,8 @@ converts an integer into a list of its digits
 
 > testToDigits = toDigits 12345 == [1,2,3,4,5]
 
-> fromDigits = foldl addDigit 0
+> fromDigits :: [Int] -> Integer
+> fromDigits = (\x -> toInteger(foldl addDigit 0 x))
 >     where addDigit n d = 10 * n + d
 
 > testFromDigits = fromDigits [5,3,6,8] == 5368
