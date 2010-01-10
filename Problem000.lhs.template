@@ -4,14 +4,11 @@ problem
 -------
 put problem text here
 
-> module Problem029 where
+> module Problem0PRM_NUM where
 > import List
 
 solution
 --------
 
-> function a -> a -> a
-> function arg1 arg2 = ANSWER 
-
-> answerProblemPRM_NUM = function arg1 arg2
-> testProblemPRM_NUM = ANSWER == answerProblemPRM_NUM
+> answerProblemPRM_NUM = 1
+> testProblemPRM_NUM = 0 == answerProblemPRM_NUM
