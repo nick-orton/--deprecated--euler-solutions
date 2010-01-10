@@ -1,15 +1,6 @@
 > module Lib.Lizt where
 > import Lib.Numz
 
-Select All
-----------
-
-> select _ [] = []
-> select c (x:xs) | c x = x : select c xs
->                 | otherwise = select c xs
-
-> testselect = [2,4,6,8] == select even [1..9]
-
 Select The First Matching
 -------------------------
 Select the first element that matches a given predicate from a list 
@@ -23,7 +14,6 @@ with type Ord.  If no element is found, throw an exception
 Test:  The first element greater than 4 in ℕ is 5
 
 > testfstMatch = fstMatch (>4) nats == 5
-
 
 Select Until
 ------------
@@ -41,4 +31,4 @@ characteristic, we can select all elements prior to some position.
 module test
 -----------
 
-> testLizt = testfstMatch && testselect && testselectUntil
+> testLizt = testfstMatch && testselectUntil

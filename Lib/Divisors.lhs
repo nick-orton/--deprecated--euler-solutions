@@ -63,6 +63,31 @@ test: the lowest non-trivial divisor of 9 is 3 and 4 is 2
             
 > testld = (ld 9 == 3) && (ld 4 == 2)
 
+Perfect Numbers
+---------------
+A perfect number is a number for which the sum of its proper divisors is 
+exactly equal to the number. For example, the sum of the proper divisors of 28 
+would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.
+
+> sumDivs n = sum(properDivs n)
+
+> isPerfect :: Integer -> Bool
+> isPerfect n = sumDivs n == n
+
+> testPerfect = isPerfect 28
+
+A number n is called deficient if the sum of its proper divisors is less than n
+and it is called abundant if this sum exceeds n
+
+> isDeficient :: Integer -> Bool
+> isDeficient n = sumDivs n < n
+
+> isAbundant :: Integer -> Bool
+> isAbundant n = sumDivs n > n
+
+> testIsAbundant = isAbundant 12
+> testIsDeficient = isDeficient 9
+
 Amicable Numbers
 ----------------
 
@@ -71,7 +96,6 @@ different numbers so related that the sum of the proper divisors of one of the
 numbers is equal to the other.  A pair of amicable numbers constitutes an 
 aliquot sequence of period 2. 
 
-> sumDivs x = sum (properDivs x)
 > hasAmicablePair x = x == sumDivs (sumDivs x) && (x /= sumDivs x)
 
 For example, the smallest pair of amicable numbers is (220, 284); 
@@ -88,5 +112,11 @@ divisors, in other words a number which forms an aliquot sequence of period 1.
 module test
 -----------
 
-> testDivisors = testhasAmicablePair && testproperDivs && testld && 
->                testdivisors && testisFacOf
+> testModule = testhasAmicablePair 
+>                && testproperDivs 
+>                && testld 
+>                && testdivisors 
+>                && testisFacOf 
+>                && testPerfect 
+>                && testIsDeficient
+>                && testIsAbundant

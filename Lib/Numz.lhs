@@ -52,5 +52,3 @@ module test
 -----------
 
 > testNumz = testisNat && testisSqr && testfib 
-
-
