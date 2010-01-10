@@ -16,7 +16,11 @@ leading zeros.
 solution
 --------
 
-> domain = [1..999999]
+since even numbers will end with a zero in base 2 we can limit ourselves to only
+the odd numbers
+
+> domain = [1,3..999999]
+
 > isPalindrome l = l == (reverse l)
 > isPalindromeInBoth n = (isPalindrome (toDigits n)) 
 >                        && (isPalindrome (decToBin n))
